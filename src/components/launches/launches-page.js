@@ -14,16 +14,12 @@ const LaunchComponent = (props) => {
     limit: 100
   });
 
-  const fetchAPI = (filters) => {
-    props.onLoadPrograms(filters);
-  }
-
   useEffect(() => {
     if (!rendered) {
       setRendered(true);
-      fetchAPI(filters);
+      props.onLoadPrograms(filters);
     }
-  }, [rendered])
+  }, [rendered, filters, props])
 
   const updateApiFilters = (type, value) => {
     const data = {
@@ -34,7 +30,7 @@ const LaunchComponent = (props) => {
       delete data[type];
     }
     setFilters(data);
-    fetchAPI(data);
+    props.onLoadPrograms(data);
   }
 
 
@@ -42,7 +38,7 @@ const LaunchComponent = (props) => {
   if (props.fetching) {
     return <div className="launch-loader-container">
       <div className="launch-loader-box loader">
-        </div>
+      </div>
     </div>
   }
 

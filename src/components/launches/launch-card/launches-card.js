@@ -14,10 +14,10 @@ function LaunchCard({ details }) {
   } = details;
   const imgSrc = links.mission_patch_small;
   const land_success = rocket.first_stage.cores[0].land_success;
-  
+
   return (
     <Card className="launch-details-card">
-      <div key={flight_number}>
+      <div>
         <div>
           <img
             src={imgSrc}
