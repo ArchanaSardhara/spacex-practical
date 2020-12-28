@@ -54,15 +54,13 @@ const LaunchComponent = (props) => {
             </Col>
 
             <Col xs={12} sm={12} md={6} lg={9}>
-              <Row>
+              <div className="d-flex flex-wrap">
                 {props.programList.map((details, index) => {
                   return (
-                    <Col key={index} md={12} lg={4}>
-                      <LaunchCard details={details} />
-                    </Col>
+                    <LaunchCard key={index} details={details} />
                   );
                 })}
-              </Row>
+              </div>
             </Col>
           </Row>
           <div>
