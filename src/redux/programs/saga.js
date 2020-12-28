@@ -8,7 +8,7 @@ export function* loadProgramList({ param }) {
   yield put(updateProgramFetching(true));
   let url = "";
   Object.keys(param).forEach((key, index) => {
-    url += `${(index == 0) ? '?' : '&'}${key}=${param[key]}`;
+    url += `${(index === 0) ? '?' : '&'}${key}=${param[key]}`;
   });
   const requestURL = `https://api.spacexdata.com/v3/launches${url}`;
   const options = {
