@@ -1,17 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 
 import reportWebVitals from './reportWebVitals';
-import LaunchComponent from './components/launches/launches-page';
-import store from './configureStore'
+import App from './app';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-ReactDOM.render(
-  <Provider store={store}>
-    <LaunchComponent />
-  </Provider>,
+ReactDOM.hydrate(
+  <App />,
   document.getElementById('root')
 );
 // If you want to start measuring performance in your app, pass a function
